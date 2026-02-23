@@ -1542,8 +1542,8 @@ private class RollupTests {
     Account acc = [SELECT Id FROM Account];
 
     List<Lead> leads = new List<Lead>{
-      new Lead(Company = acc.Id, LeadSource = picklistVals[0].getValue(), LastName = 'Max Picklist on insert one'),
-      new Lead(Company = acc.Id, LeadSource = picklistVals[1].getValue(), LastName = 'Max Picklist on insert two')
+      new Lead(Company = 'Max Picklist on insert one', LeadSource = picklistVals[0].getValue(), LastName = 'Max Picklist on insert one'),
+      new Lead(Company = 'Max Picklist on insert two', LeadSource = picklistVals[1].getValue(), LastName = 'Max Picklist on insert two')
     };
     insert leads; // not the best, either, but we need to be able to use SOQL below
 
@@ -1573,8 +1573,8 @@ private class RollupTests {
     Account acc = [SELECT Id FROM Account];
 
     List<Lead> leads = new List<Lead>{
-      new Lead(Company = acc.Id, LeadSource = picklistVals[0].getValue(), LastName = 'Min Picklist on insert one'),
-      new Lead(Company = acc.Id, LeadSource = picklistVals[1].getValue(), LastName = 'Min Picklist on insert two')
+      new Lead(Company = 'Min Picklist on insert one', LeadSource = picklistVals[0].getValue(), LastName = 'Min Picklist on insert one'),
+      new Lead(Company = 'Min Picklist on insert two', LeadSource = picklistVals[1].getValue(), LastName = 'Min Picklist on insert two')
     };
     insert leads;
 
