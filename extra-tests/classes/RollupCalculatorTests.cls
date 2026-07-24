@@ -2170,7 +2170,7 @@ private class RollupCalculatorTests {
     calc.performRollup(new List<SObject>{ oppOne, oppTwo }, new Map<Id, SObject>());
 
     Assert.isInstanceOfType(calc.getReturnValue(), Date.class, 'Should have been properly converted');
-    System.assertEquals(Date.valueOfGmt(oppOne.Description), calc.getReturnValue());
+     System.assertEquals(DateTime.valueOf(oppOne.Description).dateGmt(), calc.getReturnValue());
   }
 
   @IsTest
